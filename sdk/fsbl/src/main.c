@@ -99,6 +99,13 @@
 * 11.00a kv 10/08/14	Fix for CR#826030 - LinearBootDeviceFlag should
 *											be initialized to 0 in IO mode
 *											case
+* 15.00a gan 07/21/16   Fix for CR# 953654 -(2016.3)FSBL -
+* 											In pcap.c/pcap.h/main.c,
+* 											Fabric Initialization sequence
+* 											is modified to check the PL power
+* 											before sequence starts and checking
+* 											INIT_B reset status twice in case
+* 											of failure.
 * </pre>
 *
 * @note
@@ -136,7 +143,9 @@
 #endif
 
 #ifdef STDOUT_BASEADDRESS
+#ifdef XPAR_XUARTPS_0_BASEADDR
 #include "xuartps_hw.h"
+#endif
 #endif
 
 #ifdef RSA_SUPPORT
@@ -646,7 +655,11 @@ void FsblFallback(void)
 			/*
 			 * Clean the Fabric
 			 */
-			FabricInit();
+			Status = FabricInit();
+			if(Status != XST_SUCCESS){
+				ClearFSBLIn();
+				FsblHookFallback();
+			}
 
 #ifdef RSA_SUPPORT
 
@@ -798,7 +811,9 @@ void FsblHandoff(u32 FsblStartAddr)
 void OutputStatus(u32 State)
 {
 #ifdef STDOUT_BASEADDRESS
+#ifdef XPAR_XUARTPS_0_BASEADDR
 	u32 UartReg = 0;
+#endif
 
 	fsbl_printf(DEBUG_GENERAL,"FSBL Status = 0x%.4lx\r\n", State);
 	/*
@@ -806,10 +821,12 @@ void OutputStatus(u32 State)
 	 * If this is not done some of the prints will not appear on the
 	 * serial output
 	 */
+#ifdef XPAR_XUARTPS_0_BASEADDR
 	UartReg = Xil_In32(STDOUT_BASEADDRESS + XUARTPS_SR_OFFSET);
 	while ((UartReg & XUARTPS_SR_TXEMPTY) != XUARTPS_SR_TXEMPTY) {
 		UartReg = Xil_In32(STDOUT_BASEADDRESS + XUARTPS_SR_OFFSET);
 	}
+#endif
 #endif
 }
 

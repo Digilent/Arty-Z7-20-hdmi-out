@@ -1,6 +1,6 @@
 /******************************************************************************
 *
-* Copyright (C) 2012 - 2014 Xilinx, Inc.  All rights reserved.
+* Copyright (C) 2012 - 2016 Xilinx, Inc.  All rights reserved.
 * 
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal 
@@ -228,7 +228,16 @@
 *                       not correct.
 *                       Resolution: Corresponding fields in the devcfg.STATUS
 *                       register are written to, for clearing DMA done count.
-*
+* 14.00a gan 01/13/16   869081 -(2016.1)FSBL -In qspi.c, FSBL picks the qspi
+*						read command from LQSPI_CFG register instead of hard
+*		   				coded read command (0x6B).
+* 15.00a gan 07/21/16   953654 -(2016.3)FSBL -In pcap.c/pcap.h/main.c,
+* 						Fabric Initialization sequence is modified to check
+* 						the PL power before sequence starts and checking INIT_B
+* 						reset status twice in case of failure.
+* 16.00a gan 08/02/16   Fix for CR# 955897 -(2016.3)FSBL -
+* 						In pcap.c, check pl power through MCTRL register
+* 						for 3.0 and later versions of silicon.
 * </pre>
 *
 * </pre>
@@ -313,7 +322,7 @@ extern "C" {
 /*
  * SDK release version
  */
-#define SDK_RELEASE_YEAR	2015
+#define SDK_RELEASE_YEAR	2016
 #define SDK_RELEASE_QUARTER	4
 
 #define WORD_LENGTH_SHIFT	2
