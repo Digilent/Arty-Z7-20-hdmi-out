@@ -2,9 +2,9 @@
 <Root MajorVersion="0" MinorVersion="33">
   <CompositeFile CompositeFileTopName="hdmi_out" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1490181678"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1490181678"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1490181678"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1500397795"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1500397795"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1500397795"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\hdmi_out_axi_dynclk_0_0\hdmi_out_axi_dynclk_0_0.xci" Type="IP">
         <Instance HierarchyPath="axi_dynclk_0"/>

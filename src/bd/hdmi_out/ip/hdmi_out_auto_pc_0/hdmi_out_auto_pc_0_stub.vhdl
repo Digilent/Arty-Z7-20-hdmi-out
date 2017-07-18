@@ -1,10 +1,10 @@
 -- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
--- Date        : Wed Mar 22 13:27:56 2017
--- Host        : DLT01-RO running 64-bit major release  (build 9200)
+-- Tool Version: Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
+-- Date        : Tue Jul 18 10:11:33 2017
+-- Host        : WK115 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
---               F:/Monica/Work/Vivado/NewStructRepos/Arty-Z7-20-hdmi-out/src/bd/hdmi_out/ip/hdmi_out_auto_pc_0/hdmi_out_auto_pc_0_stub.vhdl
+--               c:/Users/arbrown/Documents/az7hdmio/v02/Arty-Z7-20-hdmi-out/src/bd/hdmi_out/ip/hdmi_out_auto_pc_0/hdmi_out_auto_pc_0_stub.vhdl
 -- Design      : hdmi_out_auto_pc_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg400-1

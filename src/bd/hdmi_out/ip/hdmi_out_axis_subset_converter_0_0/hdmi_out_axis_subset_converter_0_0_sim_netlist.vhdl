@@ -1,10 +1,10 @@
 -- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
--- Date        : Wed Mar 22 13:37:11 2017
--- Host        : DLT01-RO running 64-bit major release  (build 9200)
+-- Tool Version: Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
+-- Date        : Tue Jul 18 10:10:54 2017
+-- Host        : WK115 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               F:/Monica/Work/Vivado/NewStructRepos/Arty-Z7-20-hdmi-out/src/bd/hdmi_out/ip/hdmi_out_axis_subset_converter_0_0/hdmi_out_axis_subset_converter_0_0_sim_netlist.vhdl
+--               C:/Users/arbrown/Documents/az7hdmio/v02/Arty-Z7-20-hdmi-out/src/bd/hdmi_out/ip/hdmi_out_axis_subset_converter_0_0/hdmi_out_axis_subset_converter_0_0_sim_netlist.vhdl
 -- Design      : hdmi_out_axis_subset_converter_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -21,9 +21,9 @@ entity hdmi_out_axis_subset_converter_0_0_top_hdmi_out_axis_subset_converter_0_0
     aclken : in STD_LOGIC;
     s_axis_tvalid : in STD_LOGIC;
     s_axis_tready : out STD_LOGIC;
-    s_axis_tdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_axis_tstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s_axis_tkeep : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s_axis_tdata : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    s_axis_tstrb : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s_axis_tkeep : in STD_LOGIC_VECTOR ( 2 downto 0 );
     s_axis_tlast : in STD_LOGIC;
     s_axis_tid : in STD_LOGIC_VECTOR ( 0 to 0 );
     s_axis_tdest : in STD_LOGIC_VECTOR ( 0 to 0 );
@@ -57,7 +57,7 @@ entity hdmi_out_axis_subset_converter_0_0_top_hdmi_out_axis_subset_converter_0_0
   attribute C_S_AXIS_SIGNAL_SET : string;
   attribute C_S_AXIS_SIGNAL_SET of hdmi_out_axis_subset_converter_0_0_top_hdmi_out_axis_subset_converter_0_0 : entity is "32'b00000000000000000000000010011011";
   attribute C_S_AXIS_TDATA_WIDTH : integer;
-  attribute C_S_AXIS_TDATA_WIDTH of hdmi_out_axis_subset_converter_0_0_top_hdmi_out_axis_subset_converter_0_0 : entity is 32;
+  attribute C_S_AXIS_TDATA_WIDTH of hdmi_out_axis_subset_converter_0_0_top_hdmi_out_axis_subset_converter_0_0 : entity is 24;
   attribute C_S_AXIS_TDEST_WIDTH : integer;
   attribute C_S_AXIS_TDEST_WIDTH of hdmi_out_axis_subset_converter_0_0_top_hdmi_out_axis_subset_converter_0_0 : entity is 1;
   attribute C_S_AXIS_TID_WIDTH : integer;
@@ -109,8 +109,8 @@ end hdmi_out_axis_subset_converter_0_0_top_hdmi_out_axis_subset_converter_0_0;
 architecture STRUCTURE of hdmi_out_axis_subset_converter_0_0_top_hdmi_out_axis_subset_converter_0_0 is
   signal \<const0>\ : STD_LOGIC;
   signal \^m_axis_tready\ : STD_LOGIC;
-  signal \^s_axis_tdata\ : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal \^s_axis_tkeep\ : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal \^s_axis_tdata\ : STD_LOGIC_VECTOR ( 23 downto 0 );
+  signal \^s_axis_tkeep\ : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal \^s_axis_tlast\ : STD_LOGIC;
   signal \^s_axis_tuser\ : STD_LOGIC_VECTOR ( 0 to 0 );
   signal \^s_axis_tvalid\ : STD_LOGIC;
@@ -151,8 +151,8 @@ entity hdmi_out_axis_subset_converter_0_0 is
     aresetn : in STD_LOGIC;
     s_axis_tvalid : in STD_LOGIC;
     s_axis_tready : out STD_LOGIC;
-    s_axis_tdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_axis_tkeep : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s_axis_tdata : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    s_axis_tkeep : in STD_LOGIC_VECTOR ( 2 downto 0 );
     s_axis_tlast : in STD_LOGIC;
     s_axis_tuser : in STD_LOGIC_VECTOR ( 0 to 0 );
     m_axis_tvalid : out STD_LOGIC;
@@ -195,7 +195,7 @@ architecture STRUCTURE of hdmi_out_axis_subset_converter_0_0 is
   attribute C_S_AXIS_SIGNAL_SET : string;
   attribute C_S_AXIS_SIGNAL_SET of inst : label is "32'b00000000000000000000000010011011";
   attribute C_S_AXIS_TDATA_WIDTH : integer;
-  attribute C_S_AXIS_TDATA_WIDTH of inst : label is 32;
+  attribute C_S_AXIS_TDATA_WIDTH of inst : label is 24;
   attribute C_S_AXIS_TDEST_WIDTH : integer;
   attribute C_S_AXIS_TDEST_WIDTH of inst : label is 1;
   attribute C_S_AXIS_TID_WIDTH : integer;
@@ -255,13 +255,13 @@ inst: entity work.hdmi_out_axis_subset_converter_0_0_top_hdmi_out_axis_subset_co
       m_axis_tstrb(2 downto 0) => NLW_inst_m_axis_tstrb_UNCONNECTED(2 downto 0),
       m_axis_tuser(0) => m_axis_tuser(0),
       m_axis_tvalid => m_axis_tvalid,
-      s_axis_tdata(31 downto 0) => s_axis_tdata(31 downto 0),
+      s_axis_tdata(23 downto 0) => s_axis_tdata(23 downto 0),
       s_axis_tdest(0) => '0',
       s_axis_tid(0) => '0',
-      s_axis_tkeep(3 downto 0) => s_axis_tkeep(3 downto 0),
+      s_axis_tkeep(2 downto 0) => s_axis_tkeep(2 downto 0),
       s_axis_tlast => s_axis_tlast,
       s_axis_tready => s_axis_tready,
-      s_axis_tstrb(3 downto 0) => B"1111",
+      s_axis_tstrb(2 downto 0) => B"111",
       s_axis_tuser(0) => s_axis_tuser(0),
       s_axis_tvalid => s_axis_tvalid,
       sparse_tkeep_removed => NLW_inst_sparse_tkeep_removed_UNCONNECTED,

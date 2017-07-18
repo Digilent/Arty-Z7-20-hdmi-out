@@ -1,10 +1,10 @@
 // Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
-// Date        : Wed Mar 22 13:44:55 2017
-// Host        : DLT01-RO running 64-bit major release  (build 9200)
+// Tool Version: Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
+// Date        : Tue Jul 18 10:14:53 2017
+// Host        : WK115 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
-//               F:/Monica/Work/Vivado/NewStructRepos/Arty-Z7-20-hdmi-out/src/bd/hdmi_out/ip/hdmi_out_axi_vdma_0_0/hdmi_out_axi_vdma_0_0_stub.v
+//               C:/Users/arbrown/Documents/az7hdmio/v02/Arty-Z7-20-hdmi-out/src/bd/hdmi_out/ip/hdmi_out_axi_vdma_0_0/hdmi_out_axi_vdma_0_0_stub.v
 // Design      : hdmi_out_axi_vdma_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg400-1
@@ -25,7 +25,7 @@ module hdmi_out_axi_vdma_0_0(s_axi_lite_aclk, m_axi_mm2s_aclk,
   m_axi_mm2s_rlast, m_axi_mm2s_rvalid, m_axi_mm2s_rready, m_axis_mm2s_tdata, 
   m_axis_mm2s_tkeep, m_axis_mm2s_tuser, m_axis_mm2s_tvalid, m_axis_mm2s_tready, 
   m_axis_mm2s_tlast, mm2s_introut)
-/* synthesis syn_black_box black_box_pad_pin="s_axi_lite_aclk,m_axi_mm2s_aclk,m_axis_mm2s_aclk,axi_resetn,s_axi_lite_awvalid,s_axi_lite_awready,s_axi_lite_awaddr[8:0],s_axi_lite_wvalid,s_axi_lite_wready,s_axi_lite_wdata[31:0],s_axi_lite_bresp[1:0],s_axi_lite_bvalid,s_axi_lite_bready,s_axi_lite_arvalid,s_axi_lite_arready,s_axi_lite_araddr[8:0],s_axi_lite_rvalid,s_axi_lite_rready,s_axi_lite_rdata[31:0],s_axi_lite_rresp[1:0],mm2s_frame_ptr_out[5:0],m_axi_mm2s_araddr[31:0],m_axi_mm2s_arlen[7:0],m_axi_mm2s_arsize[2:0],m_axi_mm2s_arburst[1:0],m_axi_mm2s_arprot[2:0],m_axi_mm2s_arcache[3:0],m_axi_mm2s_arvalid,m_axi_mm2s_arready,m_axi_mm2s_rdata[63:0],m_axi_mm2s_rresp[1:0],m_axi_mm2s_rlast,m_axi_mm2s_rvalid,m_axi_mm2s_rready,m_axis_mm2s_tdata[31:0],m_axis_mm2s_tkeep[3:0],m_axis_mm2s_tuser[0:0],m_axis_mm2s_tvalid,m_axis_mm2s_tready,m_axis_mm2s_tlast,mm2s_introut" */;
+/* synthesis syn_black_box black_box_pad_pin="s_axi_lite_aclk,m_axi_mm2s_aclk,m_axis_mm2s_aclk,axi_resetn,s_axi_lite_awvalid,s_axi_lite_awready,s_axi_lite_awaddr[8:0],s_axi_lite_wvalid,s_axi_lite_wready,s_axi_lite_wdata[31:0],s_axi_lite_bresp[1:0],s_axi_lite_bvalid,s_axi_lite_bready,s_axi_lite_arvalid,s_axi_lite_arready,s_axi_lite_araddr[8:0],s_axi_lite_rvalid,s_axi_lite_rready,s_axi_lite_rdata[31:0],s_axi_lite_rresp[1:0],mm2s_frame_ptr_out[5:0],m_axi_mm2s_araddr[31:0],m_axi_mm2s_arlen[7:0],m_axi_mm2s_arsize[2:0],m_axi_mm2s_arburst[1:0],m_axi_mm2s_arprot[2:0],m_axi_mm2s_arcache[3:0],m_axi_mm2s_arvalid,m_axi_mm2s_arready,m_axi_mm2s_rdata[63:0],m_axi_mm2s_rresp[1:0],m_axi_mm2s_rlast,m_axi_mm2s_rvalid,m_axi_mm2s_rready,m_axis_mm2s_tdata[23:0],m_axis_mm2s_tkeep[2:0],m_axis_mm2s_tuser[0:0],m_axis_mm2s_tvalid,m_axis_mm2s_tready,m_axis_mm2s_tlast,mm2s_introut" */;
   input s_axi_lite_aclk;
   input m_axi_mm2s_aclk;
   input m_axis_mm2s_aclk;
@@ -60,8 +60,8 @@ module hdmi_out_axi_vdma_0_0(s_axi_lite_aclk, m_axi_mm2s_aclk,
   input m_axi_mm2s_rlast;
   input m_axi_mm2s_rvalid;
   output m_axi_mm2s_rready;
-  output [31:0]m_axis_mm2s_tdata;
-  output [3:0]m_axis_mm2s_tkeep;
+  output [23:0]m_axis_mm2s_tdata;
+  output [2:0]m_axis_mm2s_tkeep;
   output [0:0]m_axis_mm2s_tuser;
   output m_axis_mm2s_tvalid;
   input m_axis_mm2s_tready;

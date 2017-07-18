@@ -92,8 +92,8 @@ ENTITY hdmi_out_axi_vdma_0_0 IS
     m_axi_mm2s_rlast : IN STD_LOGIC;
     m_axi_mm2s_rvalid : IN STD_LOGIC;
     m_axi_mm2s_rready : OUT STD_LOGIC;
-    m_axis_mm2s_tdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-    m_axis_mm2s_tkeep : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+    m_axis_mm2s_tdata : OUT STD_LOGIC_VECTOR(23 DOWNTO 0);
+    m_axis_mm2s_tkeep : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
     m_axis_mm2s_tuser : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
     m_axis_mm2s_tvalid : OUT STD_LOGIC;
     m_axis_mm2s_tready : IN STD_LOGIC;
@@ -236,8 +236,8 @@ ARCHITECTURE hdmi_out_axi_vdma_0_0_arch OF hdmi_out_axi_vdma_0_0 IS
       m_axi_mm2s_rvalid : IN STD_LOGIC;
       m_axi_mm2s_rready : OUT STD_LOGIC;
       mm2s_prmry_reset_out_n : OUT STD_LOGIC;
-      m_axis_mm2s_tdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-      m_axis_mm2s_tkeep : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+      m_axis_mm2s_tdata : OUT STD_LOGIC_VECTOR(23 DOWNTO 0);
+      m_axis_mm2s_tkeep : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
       m_axis_mm2s_tuser : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
       m_axis_mm2s_tvalid : OUT STD_LOGIC;
       m_axis_mm2s_tready : IN STD_LOGIC;
@@ -321,7 +321,7 @@ BEGIN
       C_PRMRY_IS_ACLK_ASYNC => 1,
       C_ENABLE_VIDPRMTR_READS => 1,
       C_DYNAMIC_RESOLUTION => 1,
-      C_NUM_FSTORES => 1,
+      C_NUM_FSTORES => 3,
       C_USE_FSYNC => 1,
       C_USE_MM2S_FSYNC => 0,
       C_USE_S2MM_FSYNC => 2,
@@ -342,7 +342,7 @@ BEGIN
       C_MM2S_MAX_BURST_LENGTH => 16,
       C_M_AXI_MM2S_ADDR_WIDTH => 32,
       C_M_AXI_MM2S_DATA_WIDTH => 64,
-      C_M_AXIS_MM2S_TDATA_WIDTH => 32,
+      C_M_AXIS_MM2S_TDATA_WIDTH => 24,
       C_M_AXIS_MM2S_TUSER_BITS => 1,
       C_INCLUDE_S2MM => 0,
       C_S2MM_GENLOCK_MODE => 0,

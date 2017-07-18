@@ -193,11 +193,11 @@ CONFIG.c_include_mm2s_dre {0} \
 CONFIG.c_include_s2mm {0} \
 CONFIG.c_include_s2mm_dre {0} \
 CONFIG.c_m_axi_mm2s_data_width {64} \
-CONFIG.c_m_axis_mm2s_tdata_width {32} \
+CONFIG.c_m_axis_mm2s_tdata_width {24} \
 CONFIG.c_mm2s_genlock_mode {0} \
 CONFIG.c_mm2s_linebuffer_depth {4096} \
 CONFIG.c_mm2s_max_burst_length {16} \
-CONFIG.c_num_fstores {1} \
+CONFIG.c_num_fstores {3} \
  ] $axi_vdma_0
 
   # Create instance: axis_subset_converter_0, and set properties
@@ -205,7 +205,7 @@ CONFIG.c_num_fstores {1} \
   set_property -dict [ list \
 CONFIG.M_TDATA_NUM_BYTES {3} \
 CONFIG.M_TUSER_WIDTH {1} \
-CONFIG.S_TDATA_NUM_BYTES {4} \
+CONFIG.S_TDATA_NUM_BYTES {3} \
 CONFIG.S_TUSER_WIDTH {1} \
 CONFIG.TDATA_REMAP {tdata[23:16],tdata[7:0],tdata[15:8]} \
 CONFIG.TUSER_REMAP {tuser[0:0]} \
