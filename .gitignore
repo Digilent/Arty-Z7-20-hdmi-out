@@ -53,7 +53,7 @@ sdk/**
 !sdk/fsblsrc/**
 
 # version controlled sources
-!src/bd/system.tcl
+!src/bd/*.tcl
 src/constraints/*
 !src/constraints/*.xdc
 src/hdl/*
