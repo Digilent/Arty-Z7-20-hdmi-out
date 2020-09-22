@@ -7,7 +7,7 @@ Description
 This project demonstrates how to use the USB-UART Bridge, HDMI Sink and HDMI Source with the ZYNQ processor. Vivado is used to build the demo's hardware platform, and Xilinx SDK is used to program the bitstream onto the board and to build and deploy a C application. Video data streams in through the HDMI in port and out through the HDMI out port. A UART interface is available to configure what is output through HDMI.
 There are 3 display frame buffers that the user can choose to display or write to. The configuring options are shown in the table below.
 
-The demo uses the usb-uart bridge to configure the HDMI Display , the Arty Z7-20 must be connected to a computer over MicroUSB, which must be running a serial terminal. For more information on how to set up and use a serial terminal, such as Tera Term or PuTTY, refer to [this tutorial](https://reference.digilentinc.com/learn/programmable-logic/tutorials/tera-term).
+The demo uses the usb-uart bridge to configure the HDMI Display, the Arty Z7-20 must be connected to a computer over MicroUSB, which must be running a serial terminal. For more information on how to set up and use a serial terminal, such as Tera Term or PuTTY, refer to [this tutorial](https://reference.digilentinc.com/learn/programmable-logic/tutorials/tera-term).
 
 | Option    | Function                                                                  |
 | --------- | ------------------------------------------------------------------------- |
@@ -51,7 +51,7 @@ To later make changes to the Vivado project and update the hardware platform in 
 2. Open Vivado 2020.1.
 3. Open the XPR project file, found at \<archive extracted location\>/hw/hw.xpr, included in the extracted hardware release in Vivado 2020.1.
 4. Make any desired modifications and regenerate the bitstream.
-5. Use the File > Export > Export Hardware option to export a **Fixed**, **Post-synthesis** hardware platform (XSA) file to a memorable location.
+5. Use the File > Export > Export Hardware option to export a hardware platform (XSA) file to a memorable location. Specify the **Fixed** and **Include bitstream** options, as this is a baremetal project and will be used to program the board through Vitis.
 6. In Vitis, right click on the *Platform* project, select **Update Hardware Specification**, then navigate to and select the exported XSA for import.
 7. Rebuild and relaunch the application.
 
